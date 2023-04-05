@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    int n,m;
+    printf("Enter the number of elements :- \n");
+    scanf("%d",&n);
+    int ar[n];
+    printf("Enter the elements :- \n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&ar[i]);
+    }
+    int a=ar[0];
+    int b=ar[1];
+    if(a<b){
+        int temp=a;
+        a=b;
+        b=temp;
+        
+    }
+    for (int i=2;i<n;i++){
+        if(ar[i]>a){
+            b=a;
+            a=ar[i];
+        }
+        else if(ar[i]>b && ar[i]!=a){
+            b=ar[i];
+        }
+        
+    }
+    printf("The largest number is : %d",a);
+    printf("\nThe largest second number is : %d",b);
+    return 0;
+}
